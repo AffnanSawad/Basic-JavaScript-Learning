@@ -65,5 +65,56 @@ let parameter = array([1,2,3,4,5,7]);
 console.log( "The Average Of The Odd Numbers In An Array IS :" ,parameter);
 
 
-// 
-console.log(parameter)
+// MATH , MIN , MAX , ABS , FLOOR , CEIL , PI
+ 
+let min = Math.min(2,-12,100,99);
+console.log(min);
+
+let max = Math.max(100,23,45,22);
+console.log(max);
+
+let pie = Math.PI;
+console.log(pie.toFixed(2));
+
+
+let absulote = Math.abs(-12.00);
+console.log(absulote);
+
+let rounding = Math.round(10.8);
+console.log(rounding);
+
+
+let floor = Math.floor(12.88);
+console.log(floor);
+
+
+let ceiling = Math.ceil(12.88);
+console.log(ceiling);
+
+
+
+// SWAPPING  through temporary value.
+
+let a = 10 ;
+
+ let b = 5 ;
+
+ let tem_value = a ;
+
+ a = b ;
+ b = tem_value;
+
+ console.log(a,b);
+
+
+//   another way of swapping through destructing 
+
+let x = 2 ;
+
+let y = 8 ;
+
+[x,y] = [y,x];
+
+console.log(x,y);
+
+
