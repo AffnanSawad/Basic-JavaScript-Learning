@@ -66,3 +66,4 @@ console.log( "The Average Of The Odd Numbers In An Array IS :" ,parameter);
 
 
 // 
+console.log(parameter)
