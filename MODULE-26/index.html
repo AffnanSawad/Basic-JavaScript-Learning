@@ -88,12 +88,25 @@
 
 
       <div class="card w-96 bg-base-100 shadow-xl">
-        <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+        <figure><img src="./images/rhombus.png" alt="Shoes" /></figure>
         <div class="card-body">
-          <h2 class="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+          <h2 class="card-title">ROMBOS</h2>
+          <p class="text-xl font-bold"> 0.5 X w X l </p>
+
+        <!-- input field -->
+
+        <div class="mt-5">
+            <input id="width_1" class="w-24 border-2 solid fill-black" placeholder="w" type="text"> <span>cm</span>
+
+        <input id="length_1" class="w-24 border-2 solid fill-black" placeholder="l" type="text"> <span>cm</span>
+
+        <h3 class="mt-5 text-xl font-bold"> AREA : <span id="rom-area"></span> <span>cm<sup>2</sup></span> </h3>
+
+        </div>
+
+
+          <div class="card-actions mt-10 ">
+            <button onclick="romArea()" class="btn btn-primary w-full">CALCULATE</button>
           </div>
         </div>
       </div>
@@ -137,6 +150,7 @@
 
 <script src="./js/triangle.js"></script>
 <script src="./js/rec.js"></script>
+<script src="./js/rom.js"></script>
 
 </body>
 </html>
