@@ -9,7 +9,9 @@ function romArea(){
 
     console.log(area)
 
-    show("rom-area",area);
+
+    //   SHOWING IN UI
+    
 
 
 }
@@ -26,7 +28,7 @@ function shortbyId(get_all_value){
     return final_value;
 }
 
-
+//  SHOWING IN UI
 function show(showing1,area){
 
     const element = document.getElementById(showing1);
