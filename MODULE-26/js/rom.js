@@ -11,7 +11,7 @@ function romArea(){
 
 
     //   SHOWING IN UI
-    
+    show("rom-area",area);
 
 
 }
