@@ -7,7 +7,7 @@ function romArea(){
 
     const area = width * length ;
 
-    console.log(area)
+    console.log(area);
 
 
     //   SHOWING IN UI
@@ -23,7 +23,7 @@ function shortbyId(get_all_value){
 
     const collecting = collect.value;
 
-    const final_value = parseFloat(collecting)
+    const final_value = parseFloat(collecting);
 
     return final_value;
 }
