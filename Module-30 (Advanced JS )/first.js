@@ -83,4 +83,83 @@ console.log(ll);
 
 
 
+//  SPREAD OPERATOR 
+
+const array1 = [1,2,100,5];
+
+const max = Math.max(array1);
+
+console.log(max);
+// ANSWER = NAN 
+
+//  etar jnno spread operator use korte hbe
+
+const array_1 = [1,2,100,5];
+
+const max_1 = Math.max(...array_1);
+
+console.log(max_1);
+
+//  answer 100
+
+// COPY BY SPREAD OPERATOR.
+
+const numbers = [1,2,3,4];
+
+const humm = [...numbers];
+
+numbers.push(100,200);
+
+
+// // [ 1, 2, 3, 4, 100, 200 ]
+console.log(numbers);
+
+
+// [ 1, 2, 3, 4 ]
+console.log(humm);
+
+
+
+//  DESTRUCTURE
+
+const object = {
+    phone : "Apple",
+    pp : 1000 ,
+    madeIn : "USA"
+}
+
+//  destructure throgh property name
+const {phone,pp} = object ;
+
+console.log(phone,pp);
+
+//  ARRAY DESTRUCTURE 
+
+const a_1 = [1,2,3];
+
+const [ first , second ] = a_1 ;
+
+console.log(first , second);
+
+
+//  FOR IN
+
+const object_1 = {
+    phone : "Apple",
+    pp : 1000 ,
+    madeIn : "USA"
+}
+
+for ( const item in object_1){
+
+    const PROPERTY = item ;
+
+    const values = object_1[item]
+
+    console.log(values);
+
+    console.log(PROPERTY);
+}
+
+
 
