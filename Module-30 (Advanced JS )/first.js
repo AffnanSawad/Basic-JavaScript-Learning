@@ -77,9 +77,9 @@ console.log(argument);
 
 const ar= (a) => a[2];
 
-const l = ar([1,2,3]);
+const ll = ar([1,2,3]);
 
-console.log(l);
+console.log(ll);
 
 
 
