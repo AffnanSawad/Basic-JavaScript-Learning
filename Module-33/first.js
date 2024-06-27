@@ -33,3 +33,25 @@
 // - **DNS**: Translates domain names to IP addresses.
 // - **IP**: Unique addresses for devices on a network.
 // - **API**: Allows different software systems to communicate.
+
+
+
+
+//  JSON : STRINGIFY , PARSE
+
+const data = {
+    mobile : " apple",
+    pp : [1000, 1200 ,1400]
+}
+
+console.log(data);
+
+//strigify => string e convert kore sb property 
+const strigified = JSON.stringify(data);
+
+console.log(strigified);
+
+// afer form e niye jai
+const original = JSON.parse(strigified);
+
+console.log(original);
