@@ -279,3 +279,138 @@
 //   - Simplifies error handling with `try...catch`.
 
 // Both Promises and Async/Await are essential tools for managing asynchronous code in JavaScript, each providing unique advantages for different scenarios.
+
+
+// ### `setTimeout`, `setInterval`, and `clearInterval` in JavaScript
+
+// These functions are part of the browser's Web API (or Node.js API) and are used to schedule code execution after a specified delay or at regular intervals.
+
+// ### `setTimeout`
+
+// **Purpose:**
+// `setTimeout` allows you to execute a function once after a specified delay.
+
+// **Syntax:**
+// ```javascript
+// let timeoutID = setTimeout(function, delay, [param1, param2, ...]);
+// ```
+
+// - `function`: The function to execute after the delay.
+// - `delay`: The time in milliseconds to wait before executing the function.
+// - `param1, param2, ...`: Optional parameters to pass to the function.
+
+// **Example:**
+// ```javascript
+// setTimeout(() => {
+//   console.log('This message is shown after 2 seconds');
+// }, 2000);
+// ```
+
+// ### `setInterval`
+
+// **Purpose:**
+// `setInterval` allows you to repeatedly execute a function with a fixed time delay between each call.
+
+// **Syntax:**
+// ```javascript
+// let intervalID = setInterval(function, delay, [param1, param2, ...]);
+// ```
+
+// - `function`: The function to execute repeatedly.
+// - `delay`: The time in milliseconds to wait between each execution of the function.
+// - `param1, param2, ...`: Optional parameters to pass to the function.
+
+// **Example:**
+// ```javascript
+// let count = 0;
+// let intervalID = setInterval(() => {
+//   count++;
+//   console.log(`This message is shown every second (${count})`);
+// }, 1000);
+// ```
+
+// ### `clearTimeout` and `clearInterval`
+
+// **Purpose:**
+// These functions stop the execution of a `setTimeout` or `setInterval` before they have completed.
+
+// **Syntax for `clearTimeout`:**
+// ```javascript
+// clearTimeout(timeoutID);
+// ```
+
+// **Syntax for `clearInterval`:**
+// ```javascript
+// clearInterval(intervalID);
+// ```
+
+// **Examples:**
+
+// **Using `clearTimeout`:**
+// ```javascript
+// let timeoutID = setTimeout(() => {
+//   console.log('This will not be shown');
+// }, 5000);
+
+// clearTimeout(timeoutID); // Cancels the timeout
+// ```
+
+// **Using `clearInterval`:**
+// ```javascript
+// let count = 0;
+// let intervalID = setInterval(() => {
+//   count++;
+//   console.log(`This message is shown every second (${count})`);
+
+//   if (count === 5) {
+//     clearInterval(intervalID); // Stops the interval after 5 executions
+//   }
+// }, 1000);
+// ```
+
+// ### Practical Use Cases
+
+// **1. `setTimeout` for Delayed Execution:**
+// ```javascript
+// function greet(name) {
+//   console.log(`Hello, ${name}!`);
+// }
+
+// setTimeout(greet, 3000, 'Alice'); // Prints "Hello, Alice!" after 3 seconds
+// ```
+
+// **2. `setInterval` for Repeated Execution:**
+// ```javascript
+// function showTime() {
+//   let now = new Date();
+//   console.log(now.toLocaleTimeString());
+// }
+
+// let intervalID = setInterval(showTime, 1000); // Prints the current time every second
+
+// // To stop showing time after 10 seconds
+// setTimeout(() => clearInterval(intervalID), 10000);
+// ```
+
+// **3. Combining `setTimeout` and `clearInterval` for Conditional Execution:**
+// ```javascript
+// let counter = 0;
+// let intervalID = setInterval(() => {
+//   counter++;
+//   console.log(`Counter: ${counter}`);
+
+//   if (counter === 5) {
+//     clearInterval(intervalID); // Stops the interval after 5 iterations
+//     console.log('Interval stopped');
+//   }
+// }, 1000);
+// ```
+
+// ### Summary
+
+// - **`setTimeout`:** Executes a function once after a specified delay.
+// - **`setInterval`:** Repeatedly executes a function with a specified delay between each execution.
+// - **`clearTimeout`:** Cancels a `setTimeout` before it executes.
+// - **`clearInterval`:** Stops a `setInterval` from executing further.
+
+// These functions are essential tools for managing time-based operations in JavaScript, enabling delayed and repeated code execution.
