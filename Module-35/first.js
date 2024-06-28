@@ -1,416 +1,313 @@
-// // MODULE - 35 => MORE ABOUT JAVASCRIPT
+// MODULE 35 = > MORE ABOUT JAVASCRIPT .. .. 
 
-
-// JavaScript is often abbreviated as JS. It is known for several characteristics and has specific terminologies associated with it:
-
-// ### Characteristics of JavaScript
-
-// 1. **Interpreted Language:**
-//    - **Interpreted:** JavaScript code is typically executed directly from the source code without prior compilation to machine-level code. It is executed line-by-line, which allows for quick testing and iteration during development.
-//    - **JIT Compilation:** Modern JavaScript engines, like V8, use Just-In-Time (JIT) compilation to improve performance by compiling frequently executed code paths to machine code during execution.
-
-// 2. **Dynamic Language:**
-//    - **Dynamic Typing:** Variable types are determined at runtime, allowing for more flexible and less verbose code. For example, you can reassign variables to different types.
-//    - **Dynamic Objects:** Objects can be altered dynamically by adding or removing properties and methods at runtime.
-
-// 3. **Garbage Collection:**
-//    - **Automatic Memory Management:** JavaScript has built-in garbage collection, which automatically manages memory by freeing up memory that is no longer in use, helping to prevent memory leaks.
-
-// 4. **High Abstraction:**
-//    - **High-Level Language:** JavaScript provides a high level of abstraction, meaning it is far removed from the machine code and closer to human language, making it easier to write and read.
-//    - **Built-in Functions and APIs:** JavaScript comes with a rich set of built-in functions, libraries, and APIs that abstract away complex tasks.
-
-// 5. **Object-Oriented Programming (OOP):**
-//    - **Prototype-Based OOP:** JavaScript uses prototypes rather than classical inheritance models. Objects can inherit properties and methods from other objects through their prototypes.
-//    - **Classes (ES6):** With the introduction of ECMAScript 6 (ES6), JavaScript supports classes, making it easier to implement OOP principles similar to those in classical OOP languages.
-
-// ### V8 Engine
-
-// - **What is V8?**
-//   - V8 is Google's open-source high-performance JavaScript and WebAssembly engine, written in C++. It is used in Google Chrome, Node.js, and other applications to execute JavaScript code.
-  
-// - **How V8 Works:**
-//   - **Parsing:** V8 parses the JavaScript code into an Abstract Syntax Tree (AST).
-//   - **Interpreter (Ignition):** The AST is first executed by the Ignition interpreter, which generates bytecode.
-//   - **JIT Compilation (TurboFan):** Frequently executed bytecode is then optimized and compiled into machine code by the TurboFan JIT compiler.
-//   - **Garbage Collection:** V8 includes an efficient garbage collector (Orinoco) that reclaims memory by removing objects that are no longer needed.
-
-// ### Summary
-// JavaScript is a versatile and powerful language because of its interpreted nature, dynamic typing, automatic garbage collection, high level of abstraction, and support for OOP principles. The V8 engine enhances JavaScript performance through JIT compilation and efficient memory management.
+// IMPORTANT FOR INTERVIEW...
 
 
 
-// ### Single-Threaded Nature of JavaScript
+// ## **What is JavaScript? Why JS is called highly abstracted , interpreted , dynamic type , JIT compiled , garbage collection Language.**
 
-// JavaScript is single-threaded, meaning it has a single call stack that it uses to execute code. This can be understood as the engine having only one main thread where tasks are executed sequentially.
+// **JavaScript is a programming language mainly used for creating interactive features on websites. Here’s a breakdown of the terms used to describe JavaScript:**
 
-// ### Asynchronous vs Synchronous in JavaScript
+// 1. **Highly Abstracted: JavaScript allows developers to write code without worrying about complex details of the computer's hardware or memory management. This makes it easier to write and understand.**
+// 2. **Interpreted: JavaScript code is executed line by line by the browser, rather than being compiled into machine code beforehand. This allows for immediate execution and easier debugging.**
+// 3. **Dynamic Type: In JavaScript, variables can hold any type of data, and their type can change at runtime. You don't have to specify data types explicitly.**
+// 4. **JIT Compiled: Just-In-Time (JIT) compilation means that JavaScript code is compiled to machine code at the moment it is needed, which improves performance.**
+// 5. **Garbage Collection: JavaScript automatically manages memory, freeing up space that is no longer in use, which helps prevent memory leaks and makes the language easier to use.**
 
-// **Synchronous:**
+// **In summary, JavaScript is a versatile, easy-to-use language that powers much of the interactivity on the web.**
 
-// - **Sequential Execution:** Synchronous operations are executed one after the other. Each operation waits for the previous one to complete before starting. This can lead to blocking, where a long-running operation prevents the execution of subsequent code.
-// - **Example:**
-//   ```javascript
-//   console.log('Start');
-//   // Synchronous delay (not recommended in real-world use)
-//   for (let i = 0; i < 1e9; i++) {} // This loop blocks the execution
-//   console.log('End');
-//   ```
+// # What Is V8 Engine ?
 
-// **Asynchronous:**
+// **The V8 engine is an open-source JavaScript engine developed by Google. It is used in Google Chrome and Node.js, among other applications. Here's a simple breakdown:**
 
-// - **Non-blocking Execution:** Asynchronous operations allow the program to continue executing subsequent code while waiting for the completion of the previous operation. This prevents blocking and improves performance, especially in I/O-bound tasks like network requests or file operations.
-// - **Event Loop and Callback Queue:** JavaScript handles asynchronous operations using the event loop. When an asynchronous operation is initiated (e.g., a network request), it is delegated to the browser's or Node.js's API. Once the operation completes, the callback function is placed in the callback queue, waiting to be executed once the call stack is empty.
-// - **Example:**
-//   ```javascript
-//   console.log('Start');
-//   setTimeout(() => {
-//     console.log('Asynchronous operation completed');
-//   }, 1000);
-//   console.log('End');
-//   ```
+// - **Purpose: V8 is designed to execute JavaScript code quickly and efficiently. IT is written by C++.**
 
-// ### Event Loop
+// ## Why JS is called singled threaned . Give the idea of asynchronous and syncronous?
 
-// The event loop is a fundamental concept that enables asynchronous programming in JavaScript. It continually checks the call stack and the callback queue.
+// **JavaScript is called single-threaded because it executes code on a single main thread, meaning it can only perform one task at a time. However, it handles tasks efficiently using asynchronous programming. Here's a breakdown:**
 
-// 1. **Call Stack:** This is where the code is executed. Functions are pushed onto the stack when called and popped off when they return.
-// 2. **Callback Queue:** This holds callback functions that are waiting to be executed. When the call stack is empty, the event loop pushes the next callback from the queue onto the call stack.
+// ### **Single-Threaded**
 
-// ### Promises and Async/Await
+// - **Single Main Thread: JavaScript runs on one main thread, processing one task at a time.**
+// - **Event Loop: Manages the execution of multiple tasks, ensuring the smooth running of applications by handling asynchronous tasks.**
 
-// To handle asynchronous operations more elegantly, JavaScript provides Promises and the async/await syntax.
+// ### **Synchronous**
 
-// **Promises:**
+// - **Definition: Tasks are executed one after another, in the order they appear. Each task waits for the previous one to complete.**
+// - **Example:Output:**
+    
+//     ```jsx
+//     javascriptCopy code
+//     console.log("First Task");
+//     console.log("Second Task");
+//     console.log("Third Task");
+    
+//     ```
+    
+//     ```arduino
+//     arduinoCopy code
+//     First Task
+//     Second Task
+//     Third Task
+    
+//     ```
+    
 
-// - **Definition:** A Promise represents a value that may be available now, in the future, or never. It allows chaining asynchronous operations and handling errors gracefully.
-// - **Example:**
-//   ```javascript
-//   let promise = new Promise((resolve, reject) => {
+// ### **Asynchronous**
+
+// - **Definition: Tasks can start before previous tasks finish, allowing the program to continue running while waiting for the asynchronous tasks to complete.**
+// - **Example:Output:**
+    
+//     ```jsx
+//     javascriptCopy code
+//     console.log("First Task");
+    
 //     setTimeout(() => {
-//       resolve('Promise resolved');
+//       console.log("Second Task (Async)");
 //     }, 1000);
-//   });
+    
+//     console.log("Third Task");
+    
+//     ```
+    
+//     ```arduino
+//     arduinoCopy code
+//     First Task
+//     Third Task
+//     Second Task (Async)  // This appears after 1 second
+    
+//     ```
+    
 
-//   promise.then((result) => {
-//     console.log(result);
-//   }).catch((error) => {
-//     console.log(error);
-//   });
-//   ```
+// ## NORMAL FETCH VS ASYNC AWAIT FETCH
 
-// **Async/Await:**
-
-// - **Syntactic Sugar:** `async` and `await` provide a more synchronous-looking syntax for handling asynchronous operations, making code easier to read and maintain.
-// - **Example:**
-//   ```javascript
-//   async function asyncFunction() {
-//     console.log('Start');
-//     let result = await new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve('Async/Await resolved');
-//       }, 1000);
-//     });
-//     console.log(result);
-//     console.log('End');
-//   }
-
-//   asyncFunction();
-//   ```
-
-// ### Summary
-
-// - **Single-Threaded:** JavaScript runs on a single main thread, executing code sequentially.
-// - **Synchronous:** Operations are executed one after the other, potentially blocking subsequent code execution.
-// - **Asynchronous:** Operations are executed without blocking, using the event loop to manage callbacks and improve performance.
-// - **Event Loop:** Manages the execution of asynchronous operations, ensuring that callbacks are executed when the call stack is empty.
-// - **Promises and Async/Await:** Modern constructs for handling asynchronous operations, providing more readable and maintainable code.
-
-// These characteristics allow JavaScript to handle various tasks efficiently, from simple script execution to complex web applications.
-
-
-
-
-
-
-// ### Promises in JavaScript
-
-// **What is a Promise?**
-
-// A Promise in JavaScript is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises provide a cleaner and more powerful way to handle asynchronous code compared to traditional callbacks.
-
-// **States of a Promise:**
-
-// 1. **Pending:** The initial state, neither fulfilled nor rejected.
-// 2. **Fulfilled:** The operation completed successfully.
-// 3. **Rejected:** The operation failed.
-
-// **Creating and Using Promises:**
-
-// To create a Promise, you use the `Promise` constructor which takes a function with two arguments: `resolve` and `reject`.
-
-// ```javascript
-// let promise = new Promise((resolve, reject) => {
-//   // Asynchronous operation
-//   setTimeout(() => {
-//     let success = true; // Example condition
-//     if (success) {
-//       resolve('Operation successful');
-//     } else {
-//       reject('Operation failed');
-//     }
-//   }, 1000);
-// });
-
-// promise.then((result) => {
-//   console.log(result); // 'Operation successful'
-// }).catch((error) => {
-//   console.log(error); // 'Operation failed'
-// });
-// ```
-
-// **Chaining Promises:**
-
-// Promises can be chained to perform a sequence of asynchronous operations.
-
-// ```javascript
-// let promise = new Promise((resolve, reject) => {
-//   setTimeout(() => resolve(1), 1000);
-// });
-
-// promise
-//   .then((result) => {
-//     console.log(result); // 1
-//     return result * 2;
-//   })
-//   .then((result) => {
-//     console.log(result); // 2
-//     return result * 3;
-//   })
-//   .then((result) => {
-//     console.log(result); // 6
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-// ```
-
-// ### Async/Await in JavaScript
-
-// **What are Async/Await?**
-
-// `async` and `await` are syntactic sugar built on top of Promises. They make asynchronous code look and behave more like synchronous code, making it easier to read and write.
-
-// **Using `async` and `await`:**
-
-// - **`async` Keyword:** Declares an asynchronous function. It implicitly returns a Promise.
-// - **`await` Keyword:** Pauses the execution of the async function, waiting for the Promise to resolve or reject.
+// ### Normal Fetch with `.then()`
 
 // **Example:**
 
-// ```javascript
-// async function asyncFunction() {
-//   try {
-//     console.log('Start');
-//     let result = await new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve('Async/Await resolved');
-//       }, 1000);
-//     });
-//     console.log(result); // 'Async/Await resolved'
-//     console.log('End');
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+// ```jsx
 
-// asyncFunction();
+// fetch('https://api.example.com/data')
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(error => console.error('Error:', error));
+
 // ```
 
-// **Error Handling with Async/Await:**
+// ### Async/Await Fetch
 
-// Errors in async functions can be caught using `try...catch` blocks.
+// **Example:**
 
-// ```javascript
-// async function asyncFunctionWithError() {
-//   try {
-//     let result = await new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         reject('Something went wrong');
-//       }, 1000);
-//     });
-//   } catch (error) {
-//     console.log(error); // 'Something went wrong'
-//   }
-// }
-
-// asyncFunctionWithError();
-// ```
-
-// **Chaining with Async/Await:**
-
-// Just like with Promises, you can chain asynchronous operations using `async/await`.
-
-// ```javascript
+// ```jsx
 // async function fetchData() {
-//   let data1 = await fetch('https://api.example.com/data1').then(response => response.json());
-//   let data2 = await fetch(`https://api.example.com/data2/${data1.id}`).then(response => response.json());
-//   return data2;
+//   try {
+//     const response = await fetch('https://api.example.com/data');
+//     const data = await response.json();
+//     console.log(data);
+//   }
+//    catch (error) {
+//     console.error('Error:', error);
+//   }
 // }
 
-// fetchData().then(data => {
-//   console.log(data);
-// }).catch(error => {
-//   console.log(error);
-// });
+// fetchData();
+
 // ```
 
-// ### Summary
-
-// - **Promises:**
-//   - A way to handle asynchronous operations.
-//   - Can be in one of three states: pending, fulfilled, or rejected.
-//   - Provides `.then()` for chaining and `.catch()` for error handling.
-  
-// - **Async/Await:**
-//   - Built on top of Promises.
-//   - Makes asynchronous code look synchronous.
-//   - Uses `async` to declare an asynchronous function and `await` to wait for a Promise.
-//   - Simplifies error handling with `try...catch`.
-
-// Both Promises and Async/Await are essential tools for managing asynchronous code in JavaScript, each providing unique advantages for different scenarios.
-
-
-// ### `setTimeout`, `setInterval`, and `clearInterval` in JavaScript
-
-// These functions are part of the browser's Web API (or Node.js API) and are used to schedule code execution after a specified delay or at regular intervals.
+// # Settimeout , cleartimeout , setinterval , clearinterval.
 
 // ### `setTimeout`
 
-// **Purpose:**
-// `setTimeout` allows you to execute a function once after a specified delay.
+// **Purpose**: Executes a function once after a specified delay.
 
-// **Syntax:**
-// ```javascript
-// let timeoutID = setTimeout(function, delay, [param1, param2, ...]);
+// **Example**:
+
+// ```jsx
+
+// function sayHello() {
+//   console.log("Hello!");
+// }
+
+// setTimeout(sayHello, 2000); // Says "Hello!" after 2 seconds
+
 // ```
 
-// - `function`: The function to execute after the delay.
-// - `delay`: The time in milliseconds to wait before executing the function.
-// - `param1, param2, ...`: Optional parameters to pass to the function.
+// ### `clearTimeout`
 
-// **Example:**
-// ```javascript
-// setTimeout(() => {
-//   console.log('This message is shown after 2 seconds');
-// }, 2000);
+// **Purpose**: Cancels a timeout set with `setTimeout`.
+
+// **Example**:
+
+// ```jsx
+// javascriptCopy code
+// let timeoutID = setTimeout(sayHello, 2000);
+// clearTimeout(timeoutID); // Cancels the timeout, "Hello!" will not be logged
+
 // ```
 
 // ### `setInterval`
 
-// **Purpose:**
-// `setInterval` allows you to repeatedly execute a function with a fixed time delay between each call.
+// **Purpose**: Executes a function repeatedly, with a fixed time delay between each call.
 
-// **Syntax:**
-// ```javascript
-// let intervalID = setInterval(function, delay, [param1, param2, ...]);
-// ```
+// **Example**:
 
-// - `function`: The function to execute repeatedly.
-// - `delay`: The time in milliseconds to wait between each execution of the function.
-// - `param1, param2, ...`: Optional parameters to pass to the function.
+// ```jsx
 
-// **Example:**
-// ```javascript
-// let count = 0;
-// let intervalID = setInterval(() => {
-//   count++;
-//   console.log(`This message is shown every second (${count})`);
-// }, 1000);
-// ```
-
-// ### `clearTimeout` and `clearInterval`
-
-// **Purpose:**
-// These functions stop the execution of a `setTimeout` or `setInterval` before they have completed.
-
-// **Syntax for `clearTimeout`:**
-// ```javascript
-// clearTimeout(timeoutID);
-// ```
-
-// **Syntax for `clearInterval`:**
-// ```javascript
-// clearInterval(intervalID);
-// ```
-
-// **Examples:**
-
-// **Using `clearTimeout`:**
-// ```javascript
-// let timeoutID = setTimeout(() => {
-//   console.log('This will not be shown');
-// }, 5000);
-
-// clearTimeout(timeoutID); // Cancels the timeout
-// ```
-
-// **Using `clearInterval`:**
-// ```javascript
-// let count = 0;
-// let intervalID = setInterval(() => {
-//   count++;
-//   console.log(`This message is shown every second (${count})`);
-
-//   if (count === 5) {
-//     clearInterval(intervalID); // Stops the interval after 5 executions
-//   }
-// }, 1000);
-// ```
-
-// ### Practical Use Cases
-
-// **1. `setTimeout` for Delayed Execution:**
-// ```javascript
-// function greet(name) {
-//   console.log(`Hello, ${name}!`);
+// function sayHelloRepeatedly() {
+//   console.log("Hello!");
 // }
 
-// setTimeout(greet, 3000, 'Alice'); // Prints "Hello, Alice!" after 3 seconds
+// let intervalID = setInterval(sayHelloRepeatedly, 1000); // Says "Hello!" every 1 second
+
 // ```
 
-// **2. `setInterval` for Repeated Execution:**
-// ```javascript
-// function showTime() {
-//   let now = new Date();
-//   console.log(now.toLocaleTimeString());
-// }
+// ### `clearInterval`
 
-// let intervalID = setInterval(showTime, 1000); // Prints the current time every second
+// **Purpose**: Cancels a repeated action set with `setInterval`.
 
-// // To stop showing time after 10 seconds
-// setTimeout(() => clearInterval(intervalID), 10000);
-// ```
+// **Example**:
 
-// **3. Combining `setTimeout` and `clearInterval` for Conditional Execution:**
-// ```javascript
-// let counter = 0;
-// let intervalID = setInterval(() => {
-//   counter++;
-//   console.log(`Counter: ${counter}`);
+// ```jsx
 
-//   if (counter === 5) {
-//     clearInterval(intervalID); // Stops the interval after 5 iterations
-//     console.log('Interval stopped');
-//   }
-// }, 1000);
+// clearInterval(intervalID); // Stops the repeated "Hello!" messages
+
 // ```
 
 // ### Summary
 
-// - **`setTimeout`:** Executes a function once after a specified delay.
-// - **`setInterval`:** Repeatedly executes a function with a specified delay between each execution.
-// - **`clearTimeout`:** Cancels a `setTimeout` before it executes.
-// - **`clearInterval`:** Stops a `setInterval` from executing further.
+// - **`setTimeout`**: Run a function once after a delay.
+// - **`clearTimeout`**: Cancel a `setTimeout`.
+// - **`setInterval`**: Run a function repeatedly with a delay.
+// - **`clearInterval`**: Cancel a `setInterval`.
 
-// These functions are essential tools for managing time-based operations in JavaScript, enabling delayed and repeated code execution.
+// ## What Is Event Loop ? Why it is used ?
+
+// **The Event Loop is a fundamental part of JavaScript's runtime system. It manages the execution of asynchronous code, allowing JavaScript to be non-blocking and handle multiple tasks concurrently even though it is single-threaded.**
+
+// ### **Why It Is Used?**
+
+// **The Event Loop is used to ensure smooth execution of JavaScript code by:**
+
+// - **Managing Asynchronous Tasks: It allows the execution of code that doesn't block the main thread, like fetching data from a server or waiting for user input.**
+// - **Handling Callbacks: It manages and executes functions (callbacks) that are waiting to run after asynchronous tasks are completed.**
+
+// ### **How It Works**
+
+// 1. **Call Stack: Where JavaScript code is executed line by line.**
+// 2. **Web APIs: Handles asynchronous operations (e.g., setTimeout, HTTP requests).**
+// 3. **Callback Queue: Stores callbacks from asynchronous operations, waiting to be executed.**
+// 4. **Event Loop: Continuously checks if the call stack is empty. If it is, it pushes the first callback from the callback queue to the call stack for execution.**
+
+// ### **Example**
+
+// ```jsx
+
+// console.log("Start");
+
+// setTimeout(() => {
+//   console.log("Callback");
+// }, 2000);
+
+// console.log("End");
+
+// ```
+
+// **Output:**
+
+// ```arduino
+
+// Start
+// End
+// Callback // This appears after 2 seconds
+
+// ```
+
+// ### **Summary**
+
+// **The Event Loop allows JavaScript to handle asynchronous tasks, ensuring that the main thread is not blocked and that the application remains responsive. It does this by managing the execution of code through the call stack and callback queue.**
+
+// ## TRY , CATCH , FINALLY , THROW
+
+// ### `try`
+
+// **Purpose**: Used to wrap code that might throw an error.
+
+// **Example**:
+
+// ```jsx
+// javascriptCopy code
+// try {
+//   // Code that might throw an error
+//   let result = 10 / 0; // This will throw an error (division by zero)
+// } catch (error) {
+//   // Code to handle the error
+//   console.error('Error caught:', error);
+// }
+
+// ```
+
+// ### `catch`
+
+// **Purpose**: Executes if an error is thrown in the corresponding `try` block.
+
+// **Example**:
+
+// ```jsx
+// javascriptCopy code
+// try {
+//   let result = 10 / 0; // This will throw an error (division by zero)
+// } catch (error) {
+//   console.error('Error caught:', error); // Handles the division by zero error
+// }
+
+// ```
+
+// ### `finally`
+
+// **Purpose**: Executes regardless of whether an error was thrown or caught. It's often used for cleanup tasks.
+
+// **Example**:
+
+// ```jsx
+// javascriptCopy code
+// try {
+//   let result = 10 / 0; // This will throw an error (division by zero)
+// } catch (error) {
+//   console.error('Error caught:', error);
+// } finally {
+//   console.log('This always runs, regardless of errors.');
+// }
+
+// ```
+
+// ### `throw`
+
+// **Purpose**: Used to manually throw an error.
+
+// **Example**:
+
+// ```jsx
+// javascriptCopy code
+// function divide(a, b) {
+//   if (b === 0) {
+//     throw new Error('Division by zero is not allowed.');
+//   }
+//   return a / b;
+// }
+
+// try {
+//   console.log(divide(10, 0)); // This will throw an error
+// } catch (error) {
+//   console.error('Error caught:', error.message);
+// }
+
+// ```
+
+// ### Summary
+
+// - **`try`**: Wraps code that might throw an error.
+// - **`catch`**: Handles errors thrown in the corresponding `try` block.
+// - **`finally`**: Executes cleanup code, whether an error occurred or not.
+// - **`throw`**: Manually throws an error with a custom message or object.
+
+// These constructs are essential for handling errors and ensuring robustness in JavaScript applications.
